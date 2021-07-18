@@ -9,7 +9,7 @@ const { body, validationResult } = require('express-validator');
 
 //@route    GET api/auth
 //@desc     Test route
-//@access   Public
+//@access   Private
 
 router.get('/', auth, async (req, res) => {
 
@@ -19,7 +19,7 @@ router.get('/', auth, async (req, res) => {
         res.json(user);
 
     } catch (err) {
-        cosnole.error(err.message);
+        console.error(err.message);
         res.status(500).send("Server Error");
     }
 
