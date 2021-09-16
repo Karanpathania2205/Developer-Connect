@@ -4,6 +4,10 @@ import Landing from './components/layout/Landing';
 import Navbar from './components/layout/Navbar';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Dashboard from './components/dashboard/Dashboard'
+import PrivateRoute from './components/routing/PrivateRoute'
+import CreateProfile from './components/profile-forms/CreateProfile'
+import EditProfile from './components/profile-forms/EditProfile'
 import './App.css';
 //Redux 
 import { Provider } from 'react-redux';
@@ -25,16 +29,17 @@ function App() {
         <Fragment>
 
           <Navbar />
-
-
-          <Alert />
           <Route exact path="/" component={Landing} />
           <section className="container">
+            <Alert />
             <Switch>
 
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-
+              {/*Any rotes where we want the user to be logged in for eg the dashboard , we are making it a private route*/}
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+              <PrivateRoute exact path="/edit-profile" component={EditProfile} />
 
             </Switch>
           </section>
