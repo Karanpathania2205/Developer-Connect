@@ -127,7 +127,7 @@ export const deleteExperience = id => async dispatch => {
             type: UPDATE_PROFILE,
             payload: res.data
         })
-        dispatch(setAlert('Experience removed', 'success'))
+        dispatch(setAlert('Experience removed', 'danger'))
     } catch (err) {
         dispatch({
             type: PROFILE_ERROR,
@@ -158,7 +158,7 @@ export const deleteEducation = id => async dispatch => {
 export const deleteAccount = () => async dispatch => {
     if (window.confirm('Are you sure? This can not be undone ')) {
         try {
-            const res = await axios.delete("/api/profile");
+            await axios.delete("/api/profile");
             dispatch({
                 type: CLEAR_PROFILE
 
@@ -182,7 +182,7 @@ export const deleteAccount = () => async dispatch => {
 export const getProfiles = () => async (dispatch) => {
     dispatch({ type: CLEAR_PROFILE });
     try {
-        const res = await axios.get('api/profile');
+        const res = await axios.get('/api/profile');
         dispatch({
             type: GET_PROFILES,
             payload: res.data
@@ -195,10 +195,11 @@ export const getProfiles = () => async (dispatch) => {
     }
 }
 //Get profiles by id 
-export const getProfileById = (userId) => async (dispatch) => {
-    dispatch({ type: CLEAR_PROFILE });
+export const getProfileById = userId => async (dispatch) => {
+
     try {
-        const res = await axios.get(`api/profile/user/${userId}`);
+        const res = await axios.get(`/api/profile/user/${userId}`);
+        console.log(res.data);
         dispatch({
             type: GET_PROFILE,
             payload: res.data
@@ -211,18 +212,21 @@ export const getProfileById = (userId) => async (dispatch) => {
     }
 }
 //Get GITHUB REPOS
-export const getGithubRepos = (username) => async (dispatch) => {
-    dispatch({ type: CLEAR_PROFILE });
+export const getGithubRepos = username => async dispatch => {
     try {
-        const res = await axios.get(`api/profile/github/${username}`);
+        const res = await axios.get(`/api/profile/github/${username}`);
+
         dispatch({
             type: GET_REPOS,
-            payload: res.data
+            payload: res.data,
         })
     } catch (err) {
         dispatch({
             type: PROFILE_ERROR,
-            payload: { msg: err.response.statusText, status: err.response.status }
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status,
+            },
         });
     }
-}
+};

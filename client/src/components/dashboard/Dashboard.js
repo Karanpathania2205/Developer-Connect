@@ -19,14 +19,14 @@ const Dashboard = ({ getCurrentProfile, deleteAccount, profile: { profile, loadi
 
             <h1 className="large text-primary">Dashboard</h1>
             <p className="lead">
-                <i className="fas fa-user" /> Welcome {user && user.name}
+                <i className="fa fa-user" /> Welcome {user && user.name}
             </p>
             {profile !== null ? (<Fragment><DashboardActions />
                 <Experience experience={profile.experience} />
                 <Education education={profile.education} />
                 <div className="my-2">
                     <button className="btn btn-danger" onClick={() => deleteAccount()}>
-                        <i className="fas fa-user-minus" /> Delete My Account
+                        <i className="fa fa-exclamation-triangle" /> Delete My Account
             </button>
                 </div>
 

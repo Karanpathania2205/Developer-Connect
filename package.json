@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server",
-    "client":"npm start --prefix client",
-    "dev":"concurrently \"npm run server\" \"npm run client\""
+    "server": "nodemon server --ignore client",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,14 @@
   },
   "homepage": "https://github.com/Karanpathania2205/Developer-Connect#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.6",
     "express": "^4.17.1",
     "express-validator": "^6.12.0",
+    "font-awesome": "^4.7.0",
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.0",
