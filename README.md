@@ -133,7 +133,7 @@ git push heroku master:master
 - [x] **[mongoose](http://mongoosejs.com/)**
 - [x] **[moment](https://momentjs.com/)**
 - [x] **[validator](https://github.com/chriso/validator.js)**
-=======
+
 
 
 
