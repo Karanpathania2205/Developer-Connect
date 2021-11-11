@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dev Connector
 
 A platform for developers to connect. They can create their portofolio by adding their experience, education, skills and other important information of their professional career.
@@ -132,3 +133,14 @@ git push heroku master:master
 - [x] **[mongoose](http://mongoosejs.com/)**
 - [x] **[moment](https://momentjs.com/)**
 - [x] **[validator](https://github.com/chriso/validator.js)**
+=======
+# Developer-Connect
+A social media platform for developers to connect. Developers can create their portofolio by adding their experience, education, skills and other important information of their professional career.Users can also create posts and people can upvote/downvote and comment on them. Through this application developers can connect to others developers and can clear their doubts by creating posts or tickets. 
+Live Link : - https://limitless-falls-03289.herokuapp.com/
+Quick Start
+
+
+
+
+
+>>>>>>> 0e428655ad51be6e3ed14ac7ff91bf3c9606cc95
